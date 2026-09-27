@@ -3,6 +3,7 @@ import { Search, Package, RotateCcw, ArrowRight, ShieldCheck, MapPin, Users, Clo
 import { useAuth } from '@/context/AuthContext';
 import { ShinyButton } from '@/components/ui/shiny-button';
 import { DarkGradientBg } from '@/components/ui/elegant-dark-pattern';
+import { FUIBentoGridDark } from '@/components/ui/bento';
 
 export default function LandingPage() {
   const { user } = useAuth();
@@ -49,6 +50,9 @@ export default function LandingPage() {
           </div>
         </section>
       </DarkGradientBg>
+
+      {/* Bento feature section */}
+      <FUIBentoGridDark />
 
       {/* How it works */}
       <section className="py-20 bg-white">
