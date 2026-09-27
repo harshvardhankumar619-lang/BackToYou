@@ -2,54 +2,53 @@ import { Link } from 'react-router-dom';
 import { Search, Package, RotateCcw, ArrowRight, ShieldCheck, MapPin, Users, Clock } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { ShinyButton } from '@/components/ui/shiny-button';
+import { DarkGradientBg } from '@/components/ui/elegant-dark-pattern';
 
 export default function LandingPage() {
   const { user } = useAuth();
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-blue-50/40">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-72 h-72 bg-teal-200/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-100 text-teal-700 text-sm font-medium mb-6">
-              <ShieldCheck className="w-4 h-4" />
-              CMRIT Campus Lost &amp; Found
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight tracking-tight mb-6">
-              Report and recover lost items on{' '}
-              <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
-                campus
-              </span>
-            </h1>
-            <p className="text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto mb-4">
-              BackToYou connects students who've lost belongings with those who've found them.
-              Report, search, and reclaim — all in one trusted platform built for CMRIT.
-            </p>
-            <p className="text-sm font-medium text-teal-600 mb-10">Find it. Connect. Return.</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to={user ? '/report/lost' : '/register'}
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-teal-600 text-white font-semibold shadow-lg shadow-teal-600/20 hover:bg-teal-700 hover:shadow-xl transition-all duration-200"
-              >
-                Report Lost Item
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
-              <Link
-                to={user ? '/report/found' : '/register'}
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-slate-700 font-semibold border border-slate-200 shadow-sm hover:border-teal-300 hover:text-teal-600 transition-all duration-200"
-              >
-                Report Found Item
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
+      {/* Hero with dark gradient background */}
+      <DarkGradientBg className="min-h-[90vh]">
+        <section className="relative">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-cyan-300 text-sm font-medium mb-6 border border-white/10 backdrop-blur-sm">
+                <ShieldCheck className="w-4 h-4" />
+                CMRIT Campus Lost &amp; Found
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
+                Report and recover lost items on{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                  campus
+                </span>
+              </h1>
+              <p className="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto mb-4">
+                BackToYou connects students who've lost belongings with those who've found them.
+                Report, search, and reclaim — all in one trusted platform built for CMRIT.
+              </p>
+              <p className="text-sm font-medium text-cyan-400 mb-10">Find it. Connect. Return.</p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  to={user ? '/report/lost' : '/register'}
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-teal-500 text-white font-semibold shadow-lg shadow-teal-500/20 hover:bg-teal-400 hover:shadow-xl transition-all duration-200"
+                >
+                  Report Lost Item
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+                <Link
+                  to={user ? '/report/found' : '/register'}
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 text-white font-semibold border border-white/20 backdrop-blur-sm shadow-sm hover:border-white/40 hover:bg-white/20 transition-all duration-200"
+                >
+                  Report Found Item
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </DarkGradientBg>
 
       {/* How it works */}
       <section className="py-20 bg-white">
